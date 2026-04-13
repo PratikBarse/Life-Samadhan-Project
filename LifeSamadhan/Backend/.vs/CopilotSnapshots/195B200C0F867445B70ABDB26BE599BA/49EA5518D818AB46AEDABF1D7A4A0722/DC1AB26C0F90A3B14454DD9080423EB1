@@ -1,0 +1,26 @@
+﻿import React from 'react';
+
+export default function Landing({ onNavigate }) {
+  return (
+    <div style={{ textAlign: 'center', padding: 20 }}>
+      <h1>Welcome to LifeSamadhan</h1>
+      <p style={{ maxWidth: 700, margin: '12px auto' }}>
+        LifeSamadhan connects customers with reliable service providers. Register as a customer to request services or as a service provider to offer your skills.
+      </p>
+
+      <div style={{ marginTop: 18 }}>
+        <button onClick={() => onNavigate('register')} style={{ marginRight: 8, padding: '10px 18px' }}>Register</button>
+        <button onClick={() => onNavigate('login')} style={{ marginLeft: 8, padding: '10px 18px' }}>Login</button>
+      </div>
+
+      <div style={{ marginTop: 30 }}>
+        <h3>How it works</h3>
+        <ol style={{ textAlign: 'left', display: 'inline-block', maxWidth: 640 }}>
+          <li>Select role: Customer or Service Provider</li>
+          <li>Complete registration form</li>
+          <li>Login to access service features</li>
+        </ol>
+      </div>
+    </div>
+  );
+}

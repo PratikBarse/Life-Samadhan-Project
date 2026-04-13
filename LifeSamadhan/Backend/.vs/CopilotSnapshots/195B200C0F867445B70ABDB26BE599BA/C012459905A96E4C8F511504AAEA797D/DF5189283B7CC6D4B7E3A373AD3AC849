@@ -1,0 +1,36 @@
+﻿import React from 'react';
+
+export default function About(){
+  return (
+    <div className="app-card" style={{ padding: 24 }}>
+      <h2>About LifeSamadhan</h2>
+      <p>
+        LifeSamadhan is a platform that connects customers with trusted local service providers for home and small-business needs.
+        Our goal is to make finding reliable help simple: browse services, review provider profiles, book appointments and pay securely.
+      </p>
+
+      <h3>What we offer</h3>
+      <ul>
+        <li>Wide range of services: plumbing, electrical, carpentry, cleaning and more.</li>
+        <li>Verified and reviewed providers to ensure quality.</li>
+        <li>Secure rewards and payment handling — pay after completion.</li>
+        <li>Transparent pricing and easy cancellation policy.</li>
+      </ul>
+
+      <h3>Our values</h3>
+      <p>
+        We believe in trust, safety and fairness. Providers are verified and vetted to ensure customer peace of mind. Customers can rate and provide feedback to help maintain service standards.
+      </p>
+
+      <h3>How to get started</h3>
+      <ol>
+        <li>Create an account as a Customer or Service Provider.</li>
+        <li>As a customer: search for a service, create a request and pay after completion.</li>
+        <li>As a provider: add your skills, get verified by admin, accept assignments and earn.</li>
+      </ol>
+
+      <h3>Contact</h3>
+      <p>If you have any questions, reach out via Contact page or email support@lifesamadhan.example</p>
+    </div>
+  );
+}

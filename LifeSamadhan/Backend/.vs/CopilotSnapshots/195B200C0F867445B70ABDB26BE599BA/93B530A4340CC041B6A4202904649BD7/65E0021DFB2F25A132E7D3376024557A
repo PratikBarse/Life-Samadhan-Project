@@ -1,0 +1,27 @@
+﻿import React from 'react';
+import { Link } from 'react-router-dom';
+
+export default function Navbar({ user, onLogout }) {
+  return (
+    <nav style={styles.nav}>
+      <div style={styles.brand}><Link to="/" style={styles.link}>LifeSamadhan</Link></div>
+      <div style={styles.links}>
+        <Link to="/about" style={styles.link}>About</Link>
+        <Link to="/contact" style={styles.link}>Contact</Link>
+        {!user && <Link to="/login" style={styles.link}>Login</Link>}
+        {!user && <Link to="/register" style={styles.cta}>Register</Link>}
+        {user && <Link to="/dashboard" style={styles.link}>Dashboard</Link>}
+        {user && <button onClick={onLogout} style={styles.logout}>Logout</button>}
+      </div>
+    </nav>
+  );
+}
+
+const styles = {
+  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 20px', borderBottom: '1px solid #e6e6e6' },
+  brand: { fontWeight: 700, fontSize: 18 },
+  links: { display: 'flex', alignItems: 'center', gap: 12 },
+  link: { textDecoration: 'none', color: '#333' },
+  cta: { padding: '8px 12px', background: '#0b5cff', color: '#fff', borderRadius: 6, textDecoration: 'none' },
+  logout: { padding: '6px 10px', borderRadius: 6, border: 'none', background: '#ff6b6b', color: '#fff', cursor: 'pointer' }
+};

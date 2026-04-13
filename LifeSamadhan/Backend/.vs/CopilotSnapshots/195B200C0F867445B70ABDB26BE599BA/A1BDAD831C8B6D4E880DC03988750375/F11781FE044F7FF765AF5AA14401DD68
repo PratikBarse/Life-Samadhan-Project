@@ -1,0 +1,136 @@
+﻿import React, { useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+function RoleSelector({ role, setRole }) {
+  return (
+    <div>
+      <label>
+        <input type="radio" value="CUSTOMER" checked={role === 'CUSTOMER'} onChange={() => setRole('CUSTOMER')} /> Customer
+      </label>
+      <label style={{ marginLeft: 12 }}>
+        <input type="radio" value="SERVICEPROVIDER" checked={role === 'SERVICEPROVIDER'} onChange={() => setRole('SERVICEPROVIDER')} /> Service Provider
+      </label>
+    </div>
+  );
+}
+
+export default function AuthPage({ onLogin }) {
+  const [mode, setMode] = useState('register'); // or 'login'
+  const [role, setRole] = useState('CUSTOMER');
+
+  // common
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [password, setPassword] = useState('');
+  const [location, setLocation] = useState('');
+
+  // provider specific
+  const [providerType, setProviderType] = useState('Daily Wage Worker');
+  const [skills, setSkills] = useState('');
+
+  const [message, setMessage] = useState(null);
+
+  async function register() {
+    const payload = {
+      Name: name,
+      Email: email,
+      Mobile: mobile,
+      Password: password,
+      Role: role,
+    };
+
+    try {
+      const res = await fetch(`${API_BASE}/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        setMessage({ type: 'error', text: JSON.stringify(data) });
+      } else {
+        setMessage({ type: 'success', text: 'Registration successful. Please login.' });
+        setMode('login');
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: err.message });
+    }
+  }
+
+  async function login() {
+    try {
+      const res = await fetch(`${API_BASE}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ Email: email, Password: password })
+      });
+      const data = await res.json();
+      if (!res.ok) setMessage({ type: 'error', text: JSON.stringify(data) });
+      else {
+        onLogin(data.token, data.role);
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: err.message });
+    }
+  }
+
+  return (
+    <div>
+      <div style={{ marginBottom: 12 }}>
+        <button onClick={() => setMode('register')}>Register</button>
+        <button onClick={() => setMode('login')} style={{ marginLeft: 8 }}>Login</button>
+      </div>
+
+      {mode === 'register' ? (
+        <div>
+          <h3>Register</h3>
+          <RoleSelector role={role} setRole={setRole} />
+
+          <div>
+            <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} style={{ width: '100%' }} />
+            <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} style={{ width: '100%' }} />
+            <input placeholder="Mobile" value={mobile} onChange={e => setMobile(e.target.value)} style={{ width: '100%' }} />
+            <input placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} type="password" style={{ width: '100%' }} />
+            {role === 'CUSTOMER' && (
+              <input placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} style={{ width: '100%' }} />
+            )}
+
+            {role === 'SERVICEPROVIDER' && (
+              <div>
+                <select value={providerType} onChange={e => setProviderType(e.target.value)}>
+                  <option>Daily Wage Worker</option>
+                  <option>Freelancer</option>
+                  <option>Other</option>
+                </select>
+                <textarea placeholder="Skills (comma separated)" value={skills} onChange={e => setSkills(e.target.value)} style={{ width: '100%' }} />
+                <input placeholder="Location" value={location} onChange={e => setLocation(e.target.value)} style={{ width: '100%' }} />
+              </div>
+            )}
+
+            <div style={{ marginTop: 8 }}>
+              <button onClick={register}>Register</button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h3>Login</h3>
+          <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} style={{ width: '100%' }} />
+          <input placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} type="password" style={{ width: '100%' }} />
+          <div style={{ marginTop: 8 }}>
+            <button onClick={login}>Login</button>
+          </div>
+        </div>
+      )}
+
+      {message && (
+        <div style={{ marginTop: 12, color: message.type === 'error' ? 'red' : 'green' }}>
+          {message.text}
+        </div>
+      )}
+    </div>
+  );
+}

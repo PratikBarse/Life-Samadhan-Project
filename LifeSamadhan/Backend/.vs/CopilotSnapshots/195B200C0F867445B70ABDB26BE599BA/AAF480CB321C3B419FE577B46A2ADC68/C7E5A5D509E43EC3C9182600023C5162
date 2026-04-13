@@ -1,0 +1,52 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+export default function Assignments({ token }){
+  const [assignments, setAssignments] = useState([]);
+
+  useEffect(()=>{ fetchData(); }, []);
+
+  async function fetchData(){
+    if (!token) return;
+    try{
+      const res = await fetch(`${API_BASE}/provider/assignments`, { headers: { Authorization: `Bearer ${token}` } });
+      const data = await res.json();
+      setAssignments(data || []);
+    }catch(err){ console.error(err); }
+  }
+
+  async function accept(id){
+    await fetch(`${API_BASE}/provider/assignment/${id}/accept`, { method: 'POST', headers: { Authorization: `Bearer ${token}` } });
+    fetchData();
+  }
+
+  async function start(id){
+    const otp = prompt('Enter OTP to start');
+    if (!otp) return;
+    await fetch(`${API_BASE}/provider/assignment/${id}/start`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify(otp) });
+    fetchData();
+  }
+
+  return (
+    <div>
+      <h3>Your Assignments</h3>
+      {assignments.length === 0 && <div>No assignments</div>}
+      {assignments.map((a, idx) => (
+        <div key={idx} className="app-card" style={{ marginTop: 12 }}>
+          <div style={{ display:'flex', justifyContent:'space-between' }}>
+            <div>
+              <div style={{ fontWeight:700 }}>{a.service?.name || 'Service'}</div>
+              <div style={{ color:'#6b7280' }}>Customer: {a.customer?.name}</div>
+            </div>
+            <div>
+              <div style={{ color:'#6b7280' }}>{a.assignment.status}</div>
+              {a.assignment.status === 'ASSIGNED' && <button onClick={() => accept(a.assignment.id)} style={{ marginTop:8 }}>Accept</button>}
+              {a.assignment.status === 'ACCEPTED' && <button onClick={() => start(a.assignment.id)} style={{ marginTop:8 }}>Start</button>}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

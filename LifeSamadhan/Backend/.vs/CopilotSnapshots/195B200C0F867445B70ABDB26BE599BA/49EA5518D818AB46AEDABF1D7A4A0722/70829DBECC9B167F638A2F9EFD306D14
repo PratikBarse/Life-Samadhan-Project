@@ -1,0 +1,76 @@
+﻿import React, { useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api'; // match backend launchSettings
+
+export default function PaymentForm({ token }) {
+  const [payload, setPayload] = useState(JSON.stringify({ AssignmentId: 1, CustomerId: 1, ProviderId: 2, Amount: 100.0 }, null, 2));
+  const [result, setResult] = useState(null);
+
+  const headers = (hasJson = true) => {
+    const h = { 'Accept': 'application/json' };
+    if (hasJson) h['Content-Type'] = 'application/json';
+    if (token) h['Authorization'] = `Bearer ${token}`;
+    return h;
+  };
+
+  async function createPayment() {
+    try {
+      const res = await fetch(`${API_BASE}/payment/create`, {
+        method: 'POST',
+        headers: headers(true),
+        body: payload
+      });
+
+      const contentType = res.headers.get('content-type') || '';
+      let data = null;
+      if (contentType.includes('application/json')) data = await res.json();
+      else data = await res.text();
+
+      setResult({ status: res.status, body: data });
+    } catch (err) {
+      setResult({ error: err.message });
+    }
+  }
+
+  async function mark(id, type) {
+    try {
+      const res = await fetch(`${API_BASE}/payment/${id}/${type}`, {
+        method: 'PUT',
+        headers: headers(false)
+      });
+
+      const contentType = res.headers.get('content-type') || '';
+      let data = null;
+      if (contentType.includes('application/json')) data = await res.json();
+      else data = await res.text();
+
+      setResult({ status: res.status, body: data });
+    } catch (err) {
+      setResult({ error: err.message });
+    }
+  }
+
+  return (
+    <div>
+      <h3>Create Payment</h3>
+      <textarea rows={8} style={{ width: '100%' }} value={payload} onChange={e => setPayload(e.target.value)} />
+      <div>
+        <button onClick={createPayment}>Create</button>
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <h3>Actions</h3>
+        <input placeholder="Payment Id" id="paymentIdInput" />
+        <button onClick={() => { const id = document.getElementById('paymentIdInput').value; if (id) mark(id, 'success'); }}>Mark Success</button>
+        <button onClick={() => { const id = document.getElementById('paymentIdInput').value; if (id) mark(id, 'failed'); }} style={{ marginLeft: 8 }}>Mark Failed</button>
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <h3>Result</h3>
+        <div className="payment-card">
+          <pre>{result ? JSON.stringify(result, null, 2) : 'No result yet'}</pre>
+        </div>
+      </div>
+    </div>
+  );
+}

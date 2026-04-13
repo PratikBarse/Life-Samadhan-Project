@@ -1,0 +1,230 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using LifeSamadhan.API.Data;
+using LifeSamadhan.API.Models;
+using LifeSamadhan.API.Services;
+using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+using System.Security.Claims;
+
+namespace LifeSamadhan.API.Controllers
+{
+    [Authorize (Roles="CUSTOMER,ADMIN")]
+    [ApiController]
+    [Route("api/customer")]
+    public class CustomerController : ControllerBase
+    {
+        private readonly LifeSamadhanDbContext _db;
+        private readonly ServiceAssignmentService _sas;
+        private readonly NotificationService _ns;
+
+        public CustomerController(
+            LifeSamadhanDbContext db,
+            ServiceAssignmentService sas,
+            NotificationService ns)
+        {
+            _db = db;
+            _sas = sas;
+            _ns = ns;
+        }
+
+        // Helper to get current user id from JWT
+        private long CurrentUserId()
+        {
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(idClaim)) return 0;
+            return long.Parse(idClaim);
+        }
+
+        // ======================================================
+        // LIST: Customer's Service Requests
+        // ======================================================
+        [HttpGet("requests")]
+        public IActionResult MyRequests()
+        {
+            var uid = CurrentUserId();
+            var list = _db.ServiceRequests
+                .Where(r => r.CustomerId == uid)
+                .OrderByDescending(r => r.CreatedAt)
+                .ToList();
+
+            return Ok(list);
+        }
+
+        // ======================================================
+        // LIST: Customer's Assignments (providers assigned to their requests)
+        // ======================================================
+        [HttpGet("assignments")]
+        public IActionResult MyAssignments()
+        {
+            var uid = CurrentUserId();
+            var reqIds = _db.ServiceRequests
+                .Where(r => r.CustomerId == uid)
+                .Select(r => r.Id)
+                .ToList();
+
+            var assignments = _db.ServiceAssignments
+                .Where(a => reqIds.Contains(a.RequestId))
+                .OrderByDescending(a => a.AssignedAt)
+                .ToList();
+
+            // return assignments with some provider info if available
+            var result = assignments.Select(a => new
+            {
+                assignment = a,
+                provider = _db.ServiceProviders.Find(a.ProviderId),
+                request = _db.ServiceRequests.Find(a.RequestId),
+                service = _db.Services.Find(_db.ServiceRequests.Find(a.RequestId)?.ServiceId ?? 0)
+            });
+
+            return Ok(result);
+        }
+
+        // ======================================================
+        // LIST: Customer Payments
+        // ======================================================
+        [HttpGet("payments")]
+        public IActionResult MyPayments()
+        {
+            var uid = CurrentUserId();
+            var list = _db.Payments
+                .Where(p => p.CustomerId == uid)
+                .OrderByDescending(p => p.CreatedAt)
+                .ToList();
+
+            return Ok(list);
+        }
+
+        // ======================================================
+        // PROFILE: Get current user's profile
+        // ======================================================
+        [HttpGet("profile")]
+        public IActionResult GetProfile()
+        {
+            var uid = CurrentUserId();
+            var user = _db.Users.Find(uid);
+            if (user == null) return NotFound("User not found");
+
+            var profile = _db.CustomerProfiles.FirstOrDefault(p => p.UserId == uid);
+
+            return Ok(new { user, profile });
+        }
+
+        // ======================================================
+        // PROFILE: Update basic profile fields (Name, Mobile)
+        // ======================================================
+        [HttpPut("profile")]
+        public IActionResult UpdateProfile([FromBody] User updated)
+        {
+            var uid = CurrentUserId();
+            var user = _db.Users.Find(uid);
+            if (user == null) return NotFound("User not found");
+
+            // Only allow editing of certain fields
+            user.Name = updated.Name ?? user.Name;
+            user.Mobile = updated.Mobile ?? user.Mobile;
+            // Do not allow role/status/password updates via this endpoint
+
+            _db.SaveChanges();
+            return Ok(user);
+        }
+
+        // ======================================================
+        // CUSTOMER CREATES SERVICE REQUEST
+        // (ensure CustomerId is taken from JWT)
+        // ======================================================
+        [HttpPost("request")]
+        public IActionResult Request(ServiceRequest r)
+        {
+            var uid = CurrentUserId();
+            if (uid == 0) return Unauthorized();
+
+            r.CustomerId = uid; // enforce
+            _db.ServiceRequests.Add(r);
+            _db.SaveChanges();
+
+            var assignment = _sas.AssignProvider(r.Id);
+
+            if (assignment == null)
+            {
+                return Ok(new
+                {
+                    message = "No provider available in this location for this service right now."
+                });
+            }
+
+            _ns.Send(assignment.ProviderId, "New service assigned");
+
+            return Ok(assignment);
+        }
+
+        // ======================================================
+        // CUSTOMER CANCELS REQUEST (Before Start)
+        // ======================================================
+        [HttpPost("cancel/{assignmentId}")]
+        public IActionResult CancelRequest(long assignmentId)
+        {
+            var assignment = _db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            // check ownership: assignment -> request -> customer
+            var req = _db.ServiceRequests.Find(assignment.RequestId);
+            if (req == null) return NotFound("Request not found");
+            var uid = CurrentUserId();
+            if (req.CustomerId != uid) return Forbid();
+
+            // already cancelled
+            if (assignment.Status == "CANCELLED_BY_CUSTOMER")
+                return BadRequest("This request is already cancelled");
+
+            // cannot cancel after service has started
+            if (assignment.Status == "STARTED" || assignment.Status == "COMPLETED")
+                return BadRequest("Service already started – cancellation not allowed");
+
+            // mark cancelled
+            assignment.Status = "CANCELLED_BY_CUSTOMER";
+            assignment.CompletedAt = DateTime.Now;
+
+            _db.SaveChanges();
+
+            return Ok(new
+            {
+                message = "Service request cancelled successfully",
+                assignment
+            });
+        }
+
+        // ======================================================
+        // SUBMIT RATING (customer side)
+        // ======================================================
+        [HttpPost("rating/{assignmentId}")]
+        public IActionResult SubmitRating(long assignmentId, Rating r)
+        {
+            var assignment = _db.ServiceAssignments.Find(assignmentId);
+
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            // check ownership
+            var req = _db.ServiceRequests.Find(assignment.RequestId);
+            if (req == null) return NotFound("Request not found");
+            var uid = CurrentUserId();
+            if (req.CustomerId != uid) return Forbid();
+
+            if (assignment.Status != "COMPLETED")
+                return BadRequest("Rating allowed only after service completion");
+
+            r.AssignmentId = assignment.Id;
+            r.ProviderId = assignment.ProviderId;
+            r.CustomerId = req.CustomerId; // same as earlier logic
+            r.RatedAt = DateTime.Now;
+
+            _db.Ratings.Add(r);
+            _db.SaveChanges();
+
+            return Ok(r);
+        }
+
+    }
+}

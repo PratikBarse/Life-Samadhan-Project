@@ -1,0 +1,46 @@
+﻿import React from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
+import Assignments from './Assignments';
+import Skills from './Skills';
+import Profile from './Profile';
+
+export default function ProviderDashboard({ token }){
+  return (
+    <div>
+      <h2>Provider Dashboard</h2>
+      <p style={{ color: '#6b7280' }}>Manage your assignments, skills, schedule and earnings.</p>
+
+      <div style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
+        <Link to="assignments" className="nav-link">Assignments</Link>
+        <Link to="skills" className="nav-link">Skills</Link>
+        <Link to="profile" className="nav-link">Profile</Link>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 12 }}>
+        <div>
+          <div className="app-card">
+            <Routes>
+              <Route path="assignments" element={<Assignments token={token} />} />
+              <Route path="skills" element={<Skills token={token} />} />
+              <Route path="profile" element={<Profile token={token} />} />
+              <Route path="/" element={<div>Welcome. Select a section from above.</div>} />
+            </Routes>
+          </div>
+        </div>
+
+        <aside>
+          <div className="app-card">
+            <h4>Earnings</h4>
+            <div style={{ fontWeight:700, fontSize: 20 }}>₹ 0.00</div>
+            <div style={{ color:'#6b7280', marginTop:8 }}>Earnings will appear after you complete services.</div>
+          </div>
+
+          <div className="app-card" style={{ marginTop: 12 }}>
+            <h4>Your Schedule</h4>
+            <div style={{ color:'#6b7280' }}>No upcoming assignments.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,29 @@
+﻿import React from 'react';
+import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import Assignments from './Assignments';
+import Skills from './Skills';
+import Profile from './Profile';
+
+export default function ProviderDashboard({ token }){
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h2>Provider Dashboard</h2>
+      <div style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
+        <Link to="assignments" className="nav-link">Assignments</Link>
+        <Link to="skills" className="nav-link">Skills</Link>
+        <Link to="profile" className="nav-link">Profile</Link>
+      </div>
+
+      <div className="app-card">
+        <Routes>
+          <Route path="/" element={<div>Select a section</div>} />
+          <Route path="assignments" element={<Assignments token={token} />} />
+          <Route path="skills" element={<Skills token={token} />} />
+          <Route path="profile" element={<Profile token={token} />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}

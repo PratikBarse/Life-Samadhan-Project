@@ -1,0 +1,1172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Migrations\\20251230145815_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251230145815_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\services\\serviceassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:services\\serviceassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\serviceassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\serviceassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\providercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\providercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\data\\lifesamadhandbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:data\\lifesamadhandbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\providerskillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\providerskillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\providerlocationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\providerlocationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\providerlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\providerlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\servicecategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\servicecategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\providerskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\providerskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\serviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\serviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\servicecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\servicecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\serviceprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\serviceprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\supportticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\supportticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\customerprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\customerprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\components\\tokenmanager.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\components\\tokenmanager.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\components\\paymentform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\components\\paymentform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\authpage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\authpage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\landing.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\landing.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\about.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\about.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\contact.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\contact.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\register.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\register.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\applayout.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\applayout.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\servicedetails.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\servicedetails.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\dashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\dashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\myrequests.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\myrequests.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\myassignments.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\myassignments.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\mypayments.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\mypayments.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\myratings.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\myratings.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\profile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\profile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\dashboard\\analytics.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\dashboard\\analytics.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\dashboard\\settings.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\dashboard\\settings.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\provider\\providerdashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\provider\\providerdashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\provider\\assignments.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\provider\\assignments.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\provider\\skills.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\provider\\skills.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\provider\\profile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\provider\\profile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\models\\providerskillcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:models\\providerskillcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\admin\\adminskills.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\admin\\adminskills.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\src\\pages\\admin\\admindashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\src\\pages\\admin\\admindashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|d:\\cdac\\dotnet\\project\\lifesamadhan.api_r4_final\\lifesamadhan.api\\frontend\\public\\logo.svg||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E8096438-0B90-6F3C-63D4-4963C805450E}|LifeSamadhan.API.csproj|solutionrelative:frontend\\public\\logo.svg||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Contact.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Contact.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Contact.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Contact.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Contact.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:05:28.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "About.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\About.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\About.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\About.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\About.jsx",
+              "ViewState": "AgIAACIAAAAAAAAAAIBJwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:05:21.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Footer.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\Footer.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\Footer.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\Footer.jsx",
+              "RelativeToolTip": "frontend\\src\\components\\Footer.jsx",
+              "ViewState": "AgIAACAAAAAAAAAAAIBJwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:05:17.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Navbar.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\Navbar.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\Navbar.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\Navbar.jsx",
+              "RelativeToolTip": "frontend\\src\\components\\Navbar.jsx",
+              "ViewState": "AgIAACAAAAAAAAAAAIBJwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:05:12.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20251230145815_InitialCreate.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Migrations\\20251230145815_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251230145815_InitialCreate.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Migrations\\20251230145815_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20251230145815_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:58:15.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\vite.config.js",
+              "RelativeDocumentMoniker": "frontend\\vite.config.js",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\vite.config.js",
+              "RelativeToolTip": "frontend\\vite.config.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-30T14:25:33.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "logo.svg",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\public\\logo.svg",
+              "RelativeDocumentMoniker": "frontend\\public\\logo.svg",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\public\\logo.svg",
+              "RelativeToolTip": "frontend\\public\\logo.svg",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKMSURBVDhPjZNLSFRhFMd/3507M/dKPsacsYelWGZZFFJRkdSmNrUoatMiKggSN2YFEUX3MvQiiBYWtFAyggoXPSGyhQuhFrXQFr7GMFOowcZMUO9MM3pPi9Eao6gf/Bcfh3PO/5yPo8jAsqxI5vtvKKXuhMPhK4jInIBlWRH5Bw0NDYOWZUVs264B0DILKEUXCCIpZOIi7uetpHpCxN8GiffU4rrThEIhXzgcXiEidbZtH/5ZQKTV\u002B72oItjSYfG5vxwneoX2/iW80dvxb4ji9D4BIBAIeBsbG4fSOXJWzSR7qpt9D\u002BvWndpTlNXL2HCQ28PXaIuVEB2Dmsp8DiZqyN35FAFiw19IJpPcbmrq0wCq7\u002BvHd5Y\u002B2rMy5y3OcBXmqtccq9rB/uUFKI/GzfZRPhRdBhEQIRgKUlxSAoAm0uqtWNB5Yu\u002Bier5\u002BWOoWbnxAwAwQzDao3lLIobX5ePxemiImroCIzFm\u002BztT7/CPLzi8ej\u002BVxdeyu1nJjgMR3FwDl0fD4dJRHozuWACStjM/TGDlZ50tNqHuxejo\u002B\u002BZPL8wwqCvxUFPhZFfBSbIBMJti0wJjpDpJRQXfjzr6uj9u\u002BtYysCWijA4OPqzeXpVLJtE010zS9cZDM1DTa9ASLmoaOnh4cEYaySsoa30T5Mp5kPD7Ni\u002B5Rtt7qofzqO553jqQHmHExi5p8RcRNsb6y7VWtnm1ecjUdcdM7QClwhQPl8zi3o\u002BiXdREMMwvbtvv0KYfmRJSBtvlVY93O6ujLlc8WdsYcdE1RmutlV3kO20tzcXFRohBFerQ/ccE6c11EJB53xIk7EndmNSnObxIRsSwrMucWUvh2AxiGiWmYGOassjB/0yxzzPzvOWfyAyvlXYiiBFoWAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-12-30T15:53:05.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "AdminDashboard.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\admin\\AdminDashboard.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\admin\\AdminDashboard.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\admin\\AdminDashboard.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\admin\\AdminDashboard.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:41:39.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "AdminSkills.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\admin\\AdminSkills.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\admin\\AdminSkills.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\admin\\AdminSkills.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\admin\\AdminSkills.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:41:22.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "ProviderSkillCreateDTO.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ProviderSkillCreateDTO.cs",
+              "RelativeDocumentMoniker": "Models\\ProviderSkillCreateDTO.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ProviderSkillCreateDTO.cs",
+              "RelativeToolTip": "Models\\ProviderSkillCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T15:38:21.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "Profile.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\Profile.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\provider\\Profile.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\Profile.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\provider\\Profile.jsx",
+              "ViewState": "AgIAACoAAAAAAAAAAIBJwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:34:50.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Skills.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\Skills.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\provider\\Skills.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\Skills.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\provider\\Skills.jsx",
+              "ViewState": "AgIAADAAAAAAAAAAAIBJwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:34:37.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "Assignments.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\Assignments.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\provider\\Assignments.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\Assignments.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\provider\\Assignments.jsx",
+              "ViewState": "AgIAADcAAAAAAAAAAIBJwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:34:26.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "ProviderDashboard.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\ProviderDashboard.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\provider\\ProviderDashboard.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\provider\\ProviderDashboard.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\provider\\ProviderDashboard.jsx",
+              "ViewState": "AgIAACwAAAAAAAAAAIBJwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:34:16.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Settings.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\dashboard\\Settings.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\dashboard\\Settings.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\dashboard\\Settings.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\dashboard\\Settings.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:28:12.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Analytics.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\dashboard\\Analytics.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\dashboard\\Analytics.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\dashboard\\Analytics.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\dashboard\\Analytics.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:28:02.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Profile.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Profile.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Profile.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Profile.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Profile.jsx",
+              "ViewState": "AgIAAEUAAAAAAAAAAIBJwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:25:27.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "MyRatings.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyRatings.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\MyRatings.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyRatings.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\MyRatings.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:25:05.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "MyPayments.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyPayments.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\MyPayments.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyPayments.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\MyPayments.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:24:53.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "MyAssignments.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyAssignments.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\MyAssignments.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyAssignments.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\MyAssignments.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:24:45.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "MyRequests.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyRequests.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\MyRequests.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\MyRequests.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\MyRequests.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:24:34.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Dashboard.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Dashboard.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Dashboard.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Dashboard.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Dashboard.jsx",
+              "ViewState": "AgIAACUAAAAAAAAAAIBJwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:19:09.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ServiceDetails.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\ServiceDetails.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\ServiceDetails.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\ServiceDetails.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\ServiceDetails.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:19:03.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "AppLayout.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\AppLayout.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\AppLayout.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\AppLayout.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\AppLayout.jsx",
+              "ViewState": "AgIAAFAAAAAAAAAAAIBJwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:06:21.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Login.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Login.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Login.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Login.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Login.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:05:58.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Register.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Register.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Register.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Register.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Register.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T15:05:47.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Landing.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Landing.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\Landing.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\Landing.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\Landing.jsx",
+              "ViewState": "AgIAAG4AAAAAAAAAAABRwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T14:47:29.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "App.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\App.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\App.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\App.jsx",
+              "RelativeToolTip": "frontend\\src\\App.jsx",
+              "ViewState": "AgIAADIAAAAAAAAAAIBJwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T14:25:45.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\index.html",
+              "RelativeDocumentMoniker": "frontend\\index.html",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\index.html",
+              "RelativeToolTip": "frontend\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-30T14:25:29.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAApwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "Services\\JwtService.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Services\\JwtService.cs",
+              "RelativeToolTip": "Services\\JwtService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "index.css",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\index.css",
+              "RelativeDocumentMoniker": "frontend\\src\\index.css",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\index.css",
+              "RelativeToolTip": "frontend\\src\\index.css",
+              "ViewState": "AgIAADEAAAAAAAAAAIBJwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-30T14:25:41.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "main.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\main.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\main.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\main.jsx",
+              "RelativeToolTip": "frontend\\src\\main.jsx",
+              "ViewState": "AgIAAA0AAAAAAAAAAIBJwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T14:25:36.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "AuthPage.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\AuthPage.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\pages\\AuthPage.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\pages\\AuthPage.jsx",
+              "RelativeToolTip": "frontend\\src\\pages\\AuthPage.jsx",
+              "ViewState": "AgIAAKEAAAAAAAAAAIBJwKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T14:30:37.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "package.json",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\package.json",
+              "RelativeDocumentMoniker": "frontend\\package.json",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\package.json",
+              "RelativeToolTip": "frontend\\package.json",
+              "ViewState": "AgIAAA4AAAAAAAAAAIBZwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T14:25:24.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "PaymentForm.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\PaymentForm.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\PaymentForm.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\PaymentForm.jsx",
+              "RelativeToolTip": "frontend\\src\\components\\PaymentForm.jsx",
+              "ViewState": "AgIAAEoAAAAAAAAAAIBJwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T14:25:59.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "TokenManager.jsx",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\TokenManager.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\TokenManager.jsx",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\frontend\\src\\components\\TokenManager.jsx",
+              "RelativeToolTip": "frontend\\src\\components\\TokenManager.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-30T14:25:49.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "Controllers\\ServiceController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAABRwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProviderController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ProviderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProviderController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ProviderController.cs",
+              "RelativeToolTip": "Controllers\\ProviderController.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAEBVwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProviderSkillController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ProviderSkillController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProviderSkillController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ProviderSkillController.cs",
+              "RelativeToolTip": "Controllers\\ProviderSkillController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAEBVwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginRequestDTO.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\LoginRequestDTO.cs",
+              "RelativeDocumentMoniker": "Models\\LoginRequestDTO.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\LoginRequestDTO.cs",
+              "RelativeToolTip": "Models\\LoginRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceAssignmentService.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Services\\ServiceAssignmentService.cs",
+              "RelativeDocumentMoniker": "Services\\ServiceAssignmentService.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Services\\ServiceAssignmentService.cs",
+              "RelativeToolTip": "Services\\ServiceAssignmentService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAD4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAEBVwK8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServiceAssignment.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceAssignment.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceAssignment.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceAssignment.cs",
+              "RelativeToolTip": "Models\\ServiceAssignment.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LifeSamadhanDbContext.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Data\\LifeSamadhanDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\LifeSamadhanDbContext.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Data\\LifeSamadhanDbContext.cs",
+              "RelativeToolTip": "Data\\LifeSamadhanDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAEBVwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProviderLocationController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ProviderLocationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProviderLocationController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ProviderLocationController.cs",
+              "RelativeToolTip": "Controllers\\ProviderLocationController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LocationController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\LocationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LocationController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\LocationController.cs",
+              "RelativeToolTip": "Controllers\\LocationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProviderLocation.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ProviderLocation.cs",
+              "RelativeDocumentMoniker": "Models\\ProviderLocation.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ProviderLocation.cs",
+              "RelativeToolTip": "Models\\ProviderLocation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Location.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Location.cs",
+              "RelativeDocumentMoniker": "Models\\Location.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Location.cs",
+              "RelativeToolTip": "Models\\Location.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ServiceCategoryController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ServiceCategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceCategoryController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\ServiceCategoryController.cs",
+              "RelativeToolTip": "Controllers\\ServiceCategoryController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAsAAAAAAAAAAABBwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T14:22:48.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Models\\Notification.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Notification.cs",
+              "RelativeToolTip": "Models\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ServiceProvider.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceProvider.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceProvider.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceProvider.cs",
+              "RelativeToolTip": "Models\\ServiceProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ServiceCategory.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceCategory.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceCategory.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceCategory.cs",
+              "RelativeToolTip": "Models\\ServiceCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ServicePrice.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServicePrice.cs",
+              "RelativeDocumentMoniker": "Models\\ServicePrice.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServicePrice.cs",
+              "RelativeToolTip": "Models\\ServicePrice.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProviderSkill.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ProviderSkill.cs",
+              "RelativeDocumentMoniker": "Models\\ProviderSkill.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ProviderSkill.cs",
+              "RelativeToolTip": "Models\\ProviderSkill.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RatingController.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\RatingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RatingController.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Controllers\\RatingController.cs",
+              "RelativeToolTip": "Controllers\\RatingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SupportTicket.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\SupportTicket.cs",
+              "RelativeDocumentMoniker": "Models\\SupportTicket.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\SupportTicket.cs",
+              "RelativeToolTip": "Models\\SupportTicket.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ServiceRequest.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceRequest.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\ServiceRequest.cs",
+              "RelativeToolTip": "Models\\ServiceRequest.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CustomerProfile.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\CustomerProfile.cs",
+              "RelativeDocumentMoniker": "Models\\CustomerProfile.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\CustomerProfile.cs",
+              "RelativeToolTip": "Models\\CustomerProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Rating.cs",
+              "RelativeDocumentMoniker": "Models\\Rating.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Rating.cs",
+              "RelativeToolTip": "Models\\Rating.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "Models\\Service.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Models\\Service.cs",
+              "RelativeToolTip": "Models\\Service.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Services\\NotificationService.cs",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Services\\NotificationService.cs",
+              "RelativeToolTip": "Services\\NotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:22:48.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\CDAC\\Dotnet\\Project\\LifeSamadhan.API_R4_Final\\LifeSamadhan.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T14:22:48.936Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

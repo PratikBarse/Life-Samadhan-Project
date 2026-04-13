@@ -1,0 +1,14 @@
+﻿import React from 'react';
+
+export default function Footer(){
+  return (
+    <footer style={styles.footer}>
+      <div>© {new Date().getFullYear()} LifeSamadhan</div>
+      <div style={{ fontSize: 12, color: '#666' }}>Built with care</div>
+    </footer>
+  );
+}
+
+const styles = {
+  footer: { marginTop: 40, padding: 20, borderTop: '1px solid #eee', textAlign: 'center', color: '#444' }
+};

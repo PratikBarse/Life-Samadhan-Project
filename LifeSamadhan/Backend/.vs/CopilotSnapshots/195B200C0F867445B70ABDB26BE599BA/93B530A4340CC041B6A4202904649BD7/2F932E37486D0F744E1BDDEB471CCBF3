@@ -1,0 +1,73 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+export default function Landing({ onNavigate }) {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch(`${API_BASE}/service`);
+        const data = await res.json();
+        setServices(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  return (
+    <div>
+      <header style={styles.hero}>
+        <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px 20px' }}>
+          <h1 style={{ fontSize: 36, margin: '0 0 12px' }}>Find trusted local service providers</h1>
+          <p style={{ color: '#4b5563' }}>Book skilled workers for home services, repairs, or small tasks — fast and reliable.</p>
+          <div style={{ marginTop: 16 }}>
+            <button onClick={() => onNavigate('register')} style={{ marginRight: 8 }}>Get Started</button>
+            <button onClick={() => onNavigate('login')} style={{ marginLeft: 8, background: 'transparent', color: '#0b5cff', border: '1px solid #0b5cff' }}>Login</button>
+          </div>
+        </div>
+      </header>
+
+      <main style={{ padding: '24px 20px' }}>
+        <section>
+          <h2 style={{ marginBottom: 12 }}>Popular Services</h2>
+          {loading ? <div>Loading services...</div> : (
+            <div style={styles.grid}>
+              {services.map(s => (
+                <div key={s.id} style={styles.card}>
+                  <div style={{ fontWeight: 700 }}>{s.name}</div>
+                  <div style={{ color: '#6b7280', marginTop: 8 }}>{s.description || 'No description'}</div>
+                  <div style={{ marginTop: 12 }}>
+                    <button onClick={() => onNavigate('login')}>Book</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginTop: 28 }}>
+          <h3>Why LifeSamadhan?</h3>
+          <div style={{ display: 'flex', gap: 12, marginTop: 12 }}>
+            <div style={styles.feature}>Verified providers</div>
+            <div style={styles.feature}>Secure payments</div>
+            <div style={styles.feature}>Easy booking</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
+
+const styles = {
+  hero: { background: 'linear-gradient(90deg, #eef2ff, #ffffff)', borderRadius: 8, marginBottom: 12 },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 },
+  card: { padding: 14, borderRadius: 10, background: '#fff', boxShadow: '0 6px 20px rgba(15,23,42,0.04)', border: '1px solid #f1f5f9' },
+  feature: { padding: 12, flex: 1, background: '#fff', borderRadius: 8, boxShadow: '0 4px 14px rgba(15,23,42,0.04)', textAlign: 'center' }
+};

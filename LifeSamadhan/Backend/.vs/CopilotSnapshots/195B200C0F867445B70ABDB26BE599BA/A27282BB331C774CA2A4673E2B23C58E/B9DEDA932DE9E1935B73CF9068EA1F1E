@@ -1,0 +1,39 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+export default function ProviderProfile({ token }){
+  const [profile, setProfile] = useState(null);
+
+  useEffect(()=>{ fetchProfile(); }, []);
+
+  async function fetchProfile(){
+    if (!token) return;
+    try{
+      const res = await fetch(`${API_BASE}/provider/profile`, { headers: { Authorization: `Bearer ${token}` } });
+      const data = await res.json();
+      setProfile(data);
+    }catch(err){ console.error(err); }
+  }
+
+  async function toggleAvailability(){
+    const newVal = profile.provider.availability === 'AVAILABLE' ? 'UNAVAILABLE' : 'AVAILABLE';
+    const res = await fetch(`${API_BASE}/provider/availability`, { method: 'PUT', headers: { 'Content-Type':'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify({ availability: newVal }) });
+    if (res.ok) fetchProfile();
+  }
+
+  if (!profile) return <div>Loading...</div>;
+
+  return (
+    <div>
+      <h3>Provider Profile</h3>
+      <div style={{ fontWeight:700 }}>{profile.user.name}</div>
+      <div style={{ color:'#6b7280' }}>{profile.user.email}</div>
+      <div style={{ marginTop:8 }}>Verified: {profile.provider.verified ? 'Yes' : 'No'}</div>
+      <div style={{ marginTop:8 }}>Availability: {profile.provider.availability}</div>
+      <div style={{ marginTop:12 }}>
+        <button onClick={toggleAvailability}>{profile.provider.availability === 'AVAILABLE' ? 'Go Unavailable' : 'Go Available'}</button>
+      </div>
+    </div>
+  );
+}

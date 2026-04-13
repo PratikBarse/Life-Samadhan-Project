@@ -1,0 +1,64 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+export default function Profile({ token }){
+  const [profile, setProfile] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const [form, setForm] = useState({ Name: '', Mobile: '' });
+  const [msg, setMsg] = useState(null);
+
+  useEffect(()=>{ fetchProfile(); }, []);
+
+  async function fetchProfile(){
+    if (!token) return;
+    try{
+      const res = await fetch(`${API_BASE}/customer/profile`, { headers: { Authorization: `Bearer ${token}` } });
+      const data = await res.json();
+      setProfile(data || null);
+      if (data && data.user) setForm({ Name: data.user.name, Mobile: data.user.mobile });
+    }catch(err){ console.error(err); }
+  }
+
+  async function save(){
+    try{
+      const res = await fetch(`${API_BASE}/customer/profile`, { method: 'PUT', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify(form) });
+      const data = await res.json();
+      setMsg({ type: 'success', text: 'Profile updated' });
+      setEditing(false);
+      fetchProfile();
+    }catch(err){ setMsg({ type: 'error', text: err.message }); }
+  }
+
+  return (
+    <div>
+      <h3>Profile</h3>
+      {profile ? (
+        <div>
+          <div style={{ fontWeight:700 }}>{profile.user.name}</div>
+          <div style={{ color:'#6b7280' }}>{profile.user.email}</div>
+          <div style={{ marginTop:8 }}>
+            {editing ? (
+              <div>
+                <input value={form.Name} onChange={e => setForm({ ...form, Name: e.target.value })} style={{ width:'100%', padding:8 }} />
+                <input value={form.Mobile} onChange={e => setForm({ ...form, Mobile: e.target.value })} style={{ width:'100%', padding:8, marginTop:8 }} />
+                <div style={{ marginTop:8 }}>
+                  <button onClick={save}>Save</button>
+                  <button onClick={() => setEditing(false)} style={{ marginLeft:8, background:'#ef4444' }}>Cancel</button>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div style={{ marginTop:8 }}>Mobile: {profile.user.mobile}</div>
+                <div style={{ marginTop:12 }}>
+                  <button onClick={() => setEditing(true)}>Edit</button>
+                </div>
+              </div>
+            )}
+
+          {msg && <div style={{ marginTop:8, color: msg.type === 'error' ? 'red' : 'green' }}>{msg.text}</div>}
+        </div>
+      ) : <div>Loading...</div>}
+    </div>
+  );
+}

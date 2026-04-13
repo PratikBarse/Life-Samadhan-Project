@@ -1,0 +1,117 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+export default function Landing({ onNavigate, token }) {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch(`${API_BASE}/service`);
+        const data = await res.json();
+        setServices(data || []);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  const filtered = services.filter(s => s.name.toLowerCase().includes(query.toLowerCase()));
+
+  const handleBook = (serviceId) => {
+    if (!token) {
+      onNavigate('login');
+      return;
+    }
+    // for now redirect to dashboard for booking flow
+    onNavigate('dashboard');
+  };
+
+  return (
+    <div>
+      <div className="hero app-card">
+        <div className="hero-inner">
+          <div className="hero-left">
+            <h1 className="hero-title">Reliable local services, just a click away</h1>
+            <p className="hero-sub">Browse skilled professionals near you and book trusted help for home, repairs and more.</p>
+
+            <div className="search-bar">
+              <input className="search-input" placeholder="Search services, e.g. plumber, carpenter" value={query} onChange={e => setQuery(e.target.value)} />
+              <button className="search-btn" onClick={() => {}} aria-label="Search">Search</button>
+            </div>
+
+            <div style={{ marginTop: 18 }}>
+              <button onClick={() => onNavigate('register')}>Create account</button>
+              <button onClick={() => onNavigate('login')} style={{ marginLeft: 10, background: 'transparent', color: '#0b5cff', border: '1px solid #0b5cff' }}>Sign in</button>
+            </div>
+          </div>
+
+          <div style={{ width: 360 }}>
+            <div style={{ background: 'linear-gradient(135deg,#fff,#f8fafc)', padding: 18, borderRadius: 12 }}>
+              <h4 style={{ margin: 0 }}>How it works</h4>
+              <ol style={{ marginTop: 8, color: '#6b7280' }}>
+                <li>Search or browse services</li>
+                <li>Choose a provider and book</li>
+                <li>Pay securely after completion</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main style={{ marginTop: 18 }}>
+        <section>
+          <h2 style={{ marginBottom: 12 }}>Popular services</h2>
+
+          {loading ? <div>Loading services...</div> : (
+            <div className="services-grid">
+              {filtered.length === 0 && <div style={{ color: '#6b7280' }}>No services found.</div>}
+              {filtered.map(s => (
+                <article key={s.id} className="service-card">
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                    <div style={{ width: 64, height: 64, borderRadius: 12, background: '#eef2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#0b5cff' }}>{s.name.charAt(0)}</div>
+                    <div style={{ flex: 1 }}>
+                      <div className="service-title">{s.name}</div>
+                      <div className="service-desc">{s.description || 'Trusted and verified providers'}</div>
+                    </div>
+                  </div>
+
+                  <div className="service-meta">
+                    <div style={{ color: '#6b7280', fontSize: 13 }}>From ₹ —</div>
+                    <div>
+                      <button className="service-btn" onClick={() => handleBook(s.id)}>Book</button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginTop: 28 }}>
+          <h3>Why choose us</h3>
+          <div style={{ display: 'flex', gap: 12, marginTop: 12, flexWrap: 'wrap' }}>
+            <div className="service-card" style={{ flex: '1 1 220px' }}>
+              <strong>Verified providers</strong>
+              <div style={{ color: '#6b7280', marginTop: 8 }}>Providers are vetted and reviewed by customers.</div>
+            </div>
+            <div className="service-card" style={{ flex: '1 1 220px' }}>
+              <strong>Secure payments</strong>
+              <div style={{ color: '#6b7280', marginTop: 8 }}>Payments handled securely — pay after service completes.</div>
+            </div>
+            <div className="service-card" style={{ flex: '1 1 220px' }}>
+              <strong>Easy booking</strong>
+              <div style={{ color: '#6b7280', marginTop: 8 }}>Book a provider in a few taps and track progress.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}

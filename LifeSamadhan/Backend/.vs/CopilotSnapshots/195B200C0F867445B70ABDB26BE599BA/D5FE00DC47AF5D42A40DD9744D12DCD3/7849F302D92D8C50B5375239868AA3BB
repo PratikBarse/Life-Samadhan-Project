@@ -1,0 +1,41 @@
+﻿import React, { useState } from 'react';
+import TokenManager from './components/TokenManager';
+import PaymentForm from './components/PaymentForm';
+import AuthPage from './pages/AuthPage';
+
+export default function App() {
+  const [token, setToken] = useState(localStorage.getItem('api_token') || '');
+  const [role, setRole] = useState(localStorage.getItem('api_role') || '');
+
+  const handleToken = (t) => {
+    setToken(t);
+    if (t) localStorage.setItem('api_token', t);
+    else localStorage.removeItem('api_token');
+  };
+
+  const handleLogin = (t, r) => {
+    handleToken(t);
+    setRole(r);
+    if (r) localStorage.setItem('api_role', r);
+  };
+
+  return (
+    <div className="container">
+      <h1>LifeSamadhan - Payment UI</h1>
+      <TokenManager token={token} onChange={handleToken} />
+
+      {!token ? (
+        <AuthPage onLogin={handleLogin} />
+      ) : (
+        <div>
+          <div style={{ marginTop: 12 }}>
+            <strong>Logged in as:</strong> {role}
+            <button style={{ marginLeft: 12 }} onClick={() => { handleToken(''); setRole(''); }}>Logout</button>
+          </div>
+
+          <PaymentForm token={token} />
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,106 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using LifeSamadhan.API.Data;
+using LifeSamadhan.API.Models;
+using LifeSamadhan.API.Services;
+using System;
+using Microsoft.AspNetCore.Authorization;
+
+namespace LifeSamadhan.API.Controllers
+{
+    [Authorize (Roles="CUSTOMER,ADMIN")]
+    [ApiController]
+    [Route("api/customer")]
+    public class CustomerController : ControllerBase
+    {
+        private readonly LifeSamadhanDbContext _db;
+        private readonly ServiceAssignmentService _sas;
+        private readonly NotificationService _ns;
+
+        public CustomerController(
+            LifeSamadhanDbContext db,
+            ServiceAssignmentService sas,
+            NotificationService ns)
+        {
+            _db = db;
+            _sas = sas;
+            _ns = ns;
+        }
+
+        // ======================================================
+        // CUSTOMER CREATES SERVICE REQUEST
+        // ======================================================
+        [HttpPost("request")]
+        public IActionResult Request(ServiceRequest r)
+        {
+            _db.ServiceRequests.Add(r);
+            _db.SaveChanges();
+
+            var assignment = _sas.AssignProvider(r.Id);
+
+            if (assignment == null)
+            {
+                return Ok(new
+                {
+                    message = "No provider available in this location for this service right now."
+                });
+            }
+
+            _ns.Send(assignment.ProviderId, "New service assigned");
+
+            return Ok(assignment);
+        }
+
+
+        // ======================================================
+        // CUSTOMER CANCELS REQUEST (Before Start)
+        // ======================================================
+        [HttpPost("cancel/{assignmentId}")]
+        public IActionResult CancelRequest(long assignmentId)
+        {
+            var assignment = _db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            // already cancelled
+            if (assignment.Status == "CANCELLED_BY_CUSTOMER")
+                return BadRequest("This request is already cancelled");
+
+            // cannot cancel after service has started
+            if (assignment.Status == "STARTED" || assignment.Status == "COMPLETED")
+                return BadRequest("Service already started — cancellation not allowed");
+
+            // mark cancelled
+            assignment.Status = "CANCELLED_BY_CUSTOMER";
+            assignment.CompletedAt = DateTime.Now;
+
+            _db.SaveChanges();
+
+            return Ok(new
+            {
+                message = "Service request cancelled successfully",
+                assignment
+            });
+        }
+        [HttpPost("rating/{assignmentId}")]
+        public IActionResult SubmitRating(long assignmentId, Rating r)
+        {
+            var assignment = _db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            if (assignment.Status != "COMPLETED")
+                return BadRequest("Rating allowed only after service completion");
+
+            r.AssignmentId = assignment.Id;
+            r.ProviderId = assignment.ProviderId;
+            r.CustomerId = assignment.RequestId; // same as earlier logic
+            r.RatedAt = DateTime.Now;
+
+            _db.Ratings.Add(r);
+            _db.SaveChanges();
+
+            return Ok(r);
+        }
+
+    }
+}

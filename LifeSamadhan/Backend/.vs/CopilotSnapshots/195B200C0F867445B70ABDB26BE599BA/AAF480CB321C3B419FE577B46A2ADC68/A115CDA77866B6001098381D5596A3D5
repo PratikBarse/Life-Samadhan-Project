@@ -1,0 +1,49 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+export default function Skills({ token }){
+  const [skills, setSkills] = useState([]);
+  const [services, setServices] = useState([]);
+  const [form, setForm] = useState({ ServiceId: '', Remarks: '' });
+
+  useEffect(()=>{ fetchData(); fetchServices(); }, []);
+
+  async function fetchData(){ if(!token) return; try{ const res = await fetch(`${API_BASE}/provider/skills`, { headers: { Authorization: `Bearer ${token}` } }); setSkills(await res.json()); }catch(err){console.error(err);} }
+  async function fetchServices(){ try{ const res = await fetch(`${API_BASE}/service`); setServices(await res.json()); }catch(err){console.error(err);} }
+
+  async function addSkill(){
+    if (!form.ServiceId) return alert('Select service');
+    try{
+      const res = await fetch(`${API_BASE}/provider/skill/add`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ProviderId: null, ServiceId: Number(form.ServiceId), Remarks: form.Remarks }) });
+      // backend expects ProviderId; this endpoint currently doesn't fetch provider from token. For demo, backend will need update.
+      alert('Skill submitted for approval (demo)');
+      setForm({ ServiceId: '', Remarks: '' });
+      fetchData();
+    }catch(err){ console.error(err); }
+  }
+
+  return (
+    <div>
+      <h3>Your Skills</h3>
+      <div>
+        <select value={form.ServiceId} onChange={e => setForm({ ...form, ServiceId: e.target.value })}>
+          <option value="">Select service</option>
+          {services.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+        </select>
+        <input placeholder="Remarks" value={form.Remarks} onChange={e => setForm({ ...form, Remarks: e.target.value })} />
+        <button onClick={addSkill}>Add Skill</button>
+      </div>
+
+      <div style={{ marginTop:12 }}>
+        {skills.length === 0 && <div>No skills yet</div>}
+        {skills.map(sk => (
+          <div key={sk.id} className="app-card" style={{ marginTop:8 }}>
+            <div><strong>{sk.service?.name || sk.serviceId}</strong> - <span style={{ color:'#6b7280' }}>{sk.status}</span></div>
+            {sk.remarks && <div style={{ color:'#6b7280' }}>{sk.remarks}</div>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

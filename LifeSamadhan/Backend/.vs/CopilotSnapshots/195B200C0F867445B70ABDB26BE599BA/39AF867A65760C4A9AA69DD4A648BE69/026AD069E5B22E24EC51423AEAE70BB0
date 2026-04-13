@@ -1,0 +1,14 @@
+﻿import React from 'react';
+
+export default function Dashboard({ token }){
+  return (
+    <div style={{ padding: 12 }}>
+      <h2>Your Dashboard</h2>
+      <p>Welcome. Dashboard features will include: My requests, Assigned providers, Payments, Ratings and profile management.</p>
+      <div style={{ marginTop: 12 }}>
+        <div style={{ padding: 12, background: '#fff', borderRadius: 10 }}>My Requests (coming soon)</div>
+        <div style={{ padding: 12, background: '#fff', borderRadius: 10, marginTop: 8 }}>Payments (coming soon)</div>
+      </div>
+    </div>
+  );
+}

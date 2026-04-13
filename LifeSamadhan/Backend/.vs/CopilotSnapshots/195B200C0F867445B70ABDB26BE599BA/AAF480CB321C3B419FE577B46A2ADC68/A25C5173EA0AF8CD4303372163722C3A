@@ -1,0 +1,57 @@
+﻿import React, { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Landing from './Landing';
+import About from './About';
+import Contact from './Contact';
+import Register from './Register';
+import Login from './Login';
+import PaymentForm from '../components/PaymentForm';
+import ServiceDetails from './ServiceDetails';
+import Dashboard from './Dashboard';
+import Analytics from './dashboard/Analytics';
+import Settings from './dashboard/Settings';
+
+export default function AppLayout(){
+  const [token, setToken] = useState(localStorage.getItem('api_token') || '');
+  const [role, setRole] = useState(localStorage.getItem('api_role') || '');
+  const navigate = useNavigate();
+
+  const handleLogin = (t, r) =>{
+    setToken(t); setRole(r); localStorage.setItem('api_token', t); localStorage.setItem('api_role', r); navigate('/dashboard');
+  };
+
+  const handleLogout = () => { setToken(''); setRole(''); localStorage.removeItem('api_token'); localStorage.removeItem('api_role'); navigate('/'); };
+
+  const onNavigate = (to) => {
+    // if absolute path provided
+    if (!to) return;
+    if (to.startsWith('/')) { navigate(to); return; }
+    // keywords
+    if (to === 'register') navigate('/register');
+    else if (to === 'login') navigate('/login');
+    else if (to === 'dashboard') navigate('/dashboard');
+    else navigate('/');
+  };
+
+  return (
+    <div>
+      <Navbar user={token ? { role } : null} onLogout={handleLogout} />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Landing onNavigate={onNavigate} token={token} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register onRegistered={() => navigate('/login')} />} />
+          <Route path="/login" element={<Login onLogged={handleLogin} />} />
+          <Route path="/service/:id" element={<ServiceDetails token={token} />} />
+          <Route path="/dashboard" element={token ? <Dashboard token={token} /> : <div>Please login to access dashboard</div>} />
+          <Route path="/dashboard/analytics" element={token ? <Analytics token={token} /> : <div>Please login to access this page</div>} />
+          <Route path="/dashboard/settings" element={token ? <Settings token={token} /> : <div>Please login to access this page</div>} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  );
+}

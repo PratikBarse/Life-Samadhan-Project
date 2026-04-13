@@ -1,0 +1,52 @@
+﻿import React, { useState } from 'react';
+import TokenManager from './components/TokenManager';
+import PaymentForm from './components/PaymentForm';
+import AuthPage from './pages/AuthPage';
+import Landing from './pages/Landing';
+
+export default function App() {
+  const [token, setToken] = useState(localStorage.getItem('api_token') || '');
+  const [role, setRole] = useState(localStorage.getItem('api_role') || '');
+  const [route, setRoute] = useState('home'); // home | register | login | dashboard
+
+  const handleToken = (t) => {
+    setToken(t);
+    if (t) localStorage.setItem('api_token', t);
+    else localStorage.removeItem('api_token');
+  };
+
+  const handleLogin = (t, r) => {
+    handleToken(t);
+    setRole(r);
+    if (r) localStorage.setItem('api_role', r);
+    setRoute('dashboard');
+  };
+
+  return (
+    <div className="container">
+      <h1>LifeSamadhan</h1>
+      <TokenManager token={token} onChange={handleToken} />
+
+      {route === 'home' && <Landing onNavigate={setRoute} />}
+
+      {route === 'register' && <AuthPage onLogin={handleLogin} />}
+
+      {route === 'login' && <AuthPage onLogin={handleLogin} />}
+
+      {route === 'dashboard' && token && (
+        <div>
+          <div style={{ marginTop: 12 }}>
+            <strong>Logged in as:</strong> {role}
+            <button style={{ marginLeft: 12 }} onClick={() => { handleToken(''); setRole(''); setRoute('home'); }}>Logout</button>
+          </div>
+
+          <PaymentForm token={token} />
+        </div>
+      )}
+
+      <div style={{ marginTop: 20 }}>
+        <small>Development frontend. API base: http://localhost:5055/api</small>
+      </div>
+    </div>
+  );
+}

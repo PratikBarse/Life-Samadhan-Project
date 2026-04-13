@@ -1,0 +1,175 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using LifeSamadhan.API.Data;
+using LifeSamadhan.API.Models;
+using System.Linq;
+using System;
+
+// Alias to avoid conflict with Microsoft.Extensions.DependencyInjection.ServiceProvider
+using ServiceProviderModel = LifeSamadhan.API.Models.ServiceProvider;
+
+namespace LifeSamadhan.API.Controllers
+{
+    [Authorize(Roles = "ADMIN")]
+    [ApiController]
+    [Route("api/admin")]
+    [Produces("application/json")]
+    public class AdminController : ControllerBase
+    {
+        private readonly LifeSamadhanDbContext db;
+
+        public AdminController(LifeSamadhanDbContext db)
+        {
+            this.db = db;
+        }
+
+        /// <summary>
+        /// Get all users.
+        /// </summary>
+        [HttpGet("users")]
+        public IActionResult Users()
+        {
+            return Ok(db.Users.ToList());
+        }
+
+        /// <summary>
+        /// Get pending provider skills
+        /// </summary>
+        [HttpGet("skills/pending")]
+        public IActionResult PendingSkills()
+        {
+            var list = db.ProviderSkills
+                .Where(s => s.Status == "PENDING")
+                .Select(s => new {
+                    s.Id,
+                    s.ProviderId,
+                    s.ServiceId,
+                    s.Remarks,
+                    s.Status,
+                    Provider = db.ServiceProviders.Find(s.ProviderId),
+                    Service = db.Services.Find(s.ServiceId)
+                })
+                .ToList();
+
+            return Ok(list);
+        }
+
+        /// <summary>
+        /// Approve a provider skill by ID.
+        /// </summary>
+        [HttpPut("skill/{id}/approve")]
+        public IActionResult ApproveSkill(long id)
+        {
+            var s = db.ProviderSkills.Find(id);
+            if (s == null) return NotFound();
+
+            s.Status = "APPROVED";
+            db.SaveChanges();
+            return Ok(s);
+        }
+
+        /// <summary>
+        /// Reject a provider skill by ID.
+        /// </summary>
+        [HttpPut("skill/{id}/reject")]
+        public IActionResult RejectSkill(long id)
+        {
+            var s = db.ProviderSkills.Find(id);
+            if (s == null) return NotFound();
+
+            s.Status = "REJECTED";
+            db.SaveChanges();
+            return Ok(s);
+        }
+
+        /// <summary>
+        /// Approve a provider location by ID.
+        /// </summary>
+        [HttpPut("location/{id}/approve")]
+        public IActionResult ApproveLocation(long id)
+        {
+            var loc = db.ProviderLocations.Find(id);
+            if (loc == null) return NotFound();
+
+            loc.Status = "APPROVED";
+            if (loc.EffectiveFrom == default)
+                loc.EffectiveFrom = DateTime.UtcNow;
+
+            db.SaveChanges();
+            return Ok(loc);
+        }
+
+        /// <summary>
+        /// Verify a service provider by ID.
+        /// </summary>
+        [HttpPut("provider/{id}/verify")]
+        public IActionResult VerifyProvider(long id)
+        {
+            var provider = db.ServiceProviders.Find(id);
+            if (provider == null) return NotFound($"ServiceProvider not found: {id}");
+
+            provider.Verified = true;
+            db.SaveChanges();
+
+            return Ok(provider);
+        }
+
+        /// <summary>
+        /// Update a service provider by ID.
+        /// </summary>
+        [HttpPut("provider/{id}")]
+        [ProducesResponseType(typeof(ServiceProviderModel), 200)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdateProvider(long id, [FromBody] ServiceProviderModel updatedProvider)
+        {
+            var provider = db.ServiceProviders.Find(id);
+            if (provider == null) return NotFound($"ServiceProvider not found: {id}");
+
+            // Update allowed fields
+            provider.Availability = updatedProvider.Availability ?? provider.Availability;
+            provider.Verified = updatedProvider.Verified;
+
+            db.SaveChanges();
+
+            return Ok(provider);
+        }
+
+        /// <summary>
+        /// Delete a service provider and its linked user by ID.
+        /// </summary>
+        [HttpDelete("provider/{id}")]
+        public IActionResult DeleteProvider(long id)
+        {
+            var provider = db.ServiceProviders.Find(id);
+            if (provider == null) return NotFound($"ServiceProvider not found: {id}");
+
+            // Also delete linked user if exists
+            var user = db.Users.Find(provider.UserId);
+            if (user != null)
+            {
+                db.Users.Remove(user);
+            }
+
+            db.ServiceProviders.Remove(provider);
+            db.SaveChanges();
+
+            return Ok(new { message = $"ServiceProvider with ID {id} and linked User deleted successfully" });
+        }
+
+        /// <summary>
+        /// Get all providers, with optional filter for verified status.
+        /// </summary>
+        [HttpGet("providers")]
+        public IActionResult Providers([FromQuery] bool? verified = null)
+        {
+            var providers = db.ServiceProviders.AsQueryable();
+
+            if (verified.HasValue)
+            {
+                providers = providers.Where(p => p.Verified == verified.Value);
+            }
+
+            return Ok(providers.ToList());
+        }
+    }
+}

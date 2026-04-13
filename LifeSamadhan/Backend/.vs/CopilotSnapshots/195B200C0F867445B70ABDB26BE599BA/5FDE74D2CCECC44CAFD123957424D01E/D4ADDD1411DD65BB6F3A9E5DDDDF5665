@@ -1,0 +1,36 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using LifeSamadhan.API.Data;
+using LifeSamadhan.API.Models;
+
+namespace LifeSamadhan.API.Controllers
+{
+    [ApiController]
+    [Route("api/provider/skill")]
+    [Produces("application/json")]
+    public class ProviderSkillController : ControllerBase
+    {
+        private readonly LifeSamadhanDbContext _db;
+
+        public ProviderSkillController(LifeSamadhanDbContext db)
+        {
+            _db = db;
+        }
+
+        /// <summary>
+        /// Add a new skill for a provider (status defaults to PENDING until admin approval).
+        /// </summary>
+        /// <param name="skill">Provider skill object with ProviderId and ServiceId.</param>
+        /// <returns>Returns the created skill with status PENDING.</returns>
+        [HttpPost("add")]
+        [ProducesResponseType(typeof(ProviderSkill), 200)]
+        [ProducesResponseType(400)]
+        public IActionResult AddSkill([FromBody] ProviderSkill skill)
+        {
+            skill.Status = "PENDING";   // default until admin approves
+            _db.ProviderSkills.Add(skill);
+            _db.SaveChanges();
+
+            return Ok(skill);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+﻿{
+  "ConnectionStrings": {
+    "Default": "server=localhost;port=3306;database= lifesamadhan_db_v2;user=root;password=cdac;"
+  },
+
+  "Jwt": {
+    "Key": "LifeSamadhan_API_Production_Super_Long_Secret_Key_9876543210@#$%",
+    "Issuer": "LifeSamadhan.API",
+    "Audience": "LifeSamadhan.Client",
+    "ExpireMinutes": "120"
+  }
+}

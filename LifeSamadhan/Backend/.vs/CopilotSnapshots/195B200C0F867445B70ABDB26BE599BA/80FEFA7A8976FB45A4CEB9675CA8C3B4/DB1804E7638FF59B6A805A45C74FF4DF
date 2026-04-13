@@ -1,0 +1,10 @@
+﻿import React from 'react';
+
+export default function About(){
+  return (
+    <div style={{ padding: 20 }}>
+      <h2>About LifeSamadhan</h2>
+      <p>LifeSamadhan helps customers find trusted service providers for day-to-day tasks. Minimalist, secure and focused on reliability.</p>
+    </div>
+  );
+}

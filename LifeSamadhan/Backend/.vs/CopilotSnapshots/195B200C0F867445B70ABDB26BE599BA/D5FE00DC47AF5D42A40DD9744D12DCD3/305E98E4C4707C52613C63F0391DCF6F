@@ -1,0 +1,108 @@
+﻿using LifeSamadhan.API.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
+
+namespace LifeSamadhan.API.Controllers
+{
+    [Authorize( Roles="SERVICEPROVIDER,ADMIN")]
+    [ApiController]
+    [Route("api/provider")]
+    public class ProviderController : ControllerBase
+    {
+        private readonly LifeSamadhanDbContext db;
+
+        public ProviderController(LifeSamadhanDbContext db)
+        {
+            this.db = db;
+        }
+
+        // ===============================
+        // ACCEPT ASSIGNMENT
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/accept")]
+        public IActionResult Accept(long assignmentId)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            if (assignment.Status != "ASSIGNED")
+                return BadRequest("Request is no longer in ASSIGNED state");
+
+            assignment.Status = "ACCEPTED";
+            assignment.AcceptedAt = DateTime.Now;
+            assignment.RespondedAt = DateTime.Now;   // Track response timestamp
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // REJECT ASSIGNMENT
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/reject")]
+        public IActionResult Reject(long assignmentId)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            if (assignment.Status != "ASSIGNED")
+                return BadRequest("Request is no longer in ASSIGNED state");
+
+            assignment.Status = "REJECTED";
+            assignment.RespondedAt = DateTime.Now;
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // START SERVICE (OTP VERIFY)
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/start")]
+        public IActionResult StartService(long assignmentId, [FromBody] string otp)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            if (assignment.Status != "ACCEPTED")
+                return BadRequest("Service not yet accepted");
+
+            if (assignment.Otp != otp)
+                return BadRequest("Invalid OTP");
+
+            assignment.Status = "STARTED";
+            assignment.StartedAt = DateTime.Now;
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // COMPLETE SERVICE
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/complete")]
+        public IActionResult CompleteService(long assignmentId)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            if (assignment.Status != "STARTED")
+                return BadRequest("Service not started yet");
+
+            assignment.Status = "COMPLETED";
+            assignment.CompletedAt = DateTime.Now;
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+    }
+}

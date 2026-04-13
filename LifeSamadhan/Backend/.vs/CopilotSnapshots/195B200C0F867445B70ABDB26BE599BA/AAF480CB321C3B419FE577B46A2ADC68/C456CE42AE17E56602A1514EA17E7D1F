@@ -1,0 +1,212 @@
+﻿using LifeSamadhan.API.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using LifeSamadhan.API.Models;
+
+namespace LifeSamadhan.API.Controllers
+{
+    [Authorize( Roles="SERVICEPROVIDER,ADMIN")]
+    [ApiController]
+    [Route("api/provider")]
+    public class ProviderController : ControllerBase
+    {
+        private readonly LifeSamadhanDbContext db;
+
+        public ProviderController(LifeSamadhanDbContext db)
+        {
+            this.db = db;
+        }
+
+        private long CurrentUserId()
+        {
+            var idClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(idClaim)) return 0;
+            return long.Parse(idClaim);
+        }
+
+        private Models.ServiceProvider GetProviderForCurrentUser()
+        {
+            var uid = CurrentUserId();
+            if (uid == 0) return null;
+            return db.ServiceProviders.FirstOrDefault(p => p.UserId == uid);
+        }
+
+        // ===============================
+        // ACCEPT ASSIGNMENT
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/accept")]
+        public IActionResult Accept(long assignmentId)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            // ensure this provider owns the assignment
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return Forbid();
+            if (assignment.ProviderId != provider.Id) return Forbid();
+
+            if (assignment.Status != "ASSIGNED")
+                return BadRequest("Request is no longer in ASSIGNED state");
+
+            assignment.Status = "ACCEPTED";
+            assignment.AcceptedAt = DateTime.Now;
+            assignment.RespondedAt = DateTime.Now;   // Track response timestamp
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // REJECT ASSIGNMENT
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/reject")]
+        public IActionResult Reject(long assignmentId)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return Forbid();
+            if (assignment.ProviderId != provider.Id) return Forbid();
+
+            if (assignment.Status != "ASSIGNED")
+                return BadRequest("Request is no longer in ASSIGNED state");
+
+            assignment.Status = "REJECTED";
+            assignment.RespondedAt = DateTime.Now;
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // START SERVICE (OTP VERIFY)
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/start")]
+        public IActionResult StartService(long assignmentId, [FromBody] string otp)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return Forbid();
+            if (assignment.ProviderId != provider.Id) return Forbid();
+
+            if (assignment.Status != "ACCEPTED")
+                return BadRequest("Service not yet accepted");
+
+            if (assignment.Otp != otp)
+                return BadRequest("Invalid OTP");
+
+            assignment.Status = "STARTED";
+            assignment.StartedAt = DateTime.Now;
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // COMPLETE SERVICE
+        // ===============================
+        [HttpPost("assignment/{assignmentId}/complete")]
+        public IActionResult CompleteService(long assignmentId)
+        {
+            var assignment = db.ServiceAssignments.Find(assignmentId);
+            if (assignment == null)
+                return NotFound("Assignment not found");
+
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return Forbid();
+            if (assignment.ProviderId != provider.Id) return Forbid();
+
+            if (assignment.Status != "STARTED")
+                return BadRequest("Service not started yet");
+
+            assignment.Status = "COMPLETED";
+            assignment.CompletedAt = DateTime.Now;
+
+            db.SaveChanges();
+
+            return Ok(assignment);
+        }
+
+        // ===============================
+        // GET: assignments for current provider
+        // ===============================
+        [HttpGet("assignments")]
+        public IActionResult MyAssignments()
+        {
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return NotFound("Provider profile not found");
+
+            var assignments = db.ServiceAssignments
+                .Where(a => a.ProviderId == provider.Id)
+                .OrderByDescending(a => a.AssignedAt)
+                .ToList();
+
+            var result = assignments.Select(a => new
+            {
+                assignment = a,
+                request = db.ServiceRequests.Find(a.RequestId),
+                service = db.Services.Find(db.ServiceRequests.Find(a.RequestId)?.ServiceId ?? 0),
+                customer = db.Users.Find(db.ServiceRequests.Find(a.RequestId)?.CustomerId ?? 0)
+            });
+
+            return Ok(result);
+        }
+
+        // ===============================
+        // GET: provider profile (user + provider record)
+        // ===============================
+        [HttpGet("profile")]
+        public IActionResult GetProfile()
+        {
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return NotFound("Provider profile not found");
+
+            var user = db.Users.Find(provider.UserId);
+
+            return Ok(new { user, provider });
+        }
+
+        // ===============================
+        // GET: provider skills
+        // ===============================
+        [HttpGet("skills")]
+        public IActionResult MySkills()
+        {
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return NotFound("Provider profile not found");
+
+            var skills = db.ProviderSkills
+                .Where(s => s.ProviderId == provider.Id)
+                .Select(s => new { s.Id, s.ServiceId, s.Remarks, s.Status, Service = db.Services.Find(s.ServiceId) })
+                .ToList();
+
+            return Ok(skills);
+        }
+
+        // ===============================
+        // Update availability
+        // ===============================
+        [HttpPut("availability")]
+        public IActionResult SetAvailability([FromBody] string availability)
+        {
+            var provider = GetProviderForCurrentUser();
+            if (provider == null) return NotFound("Provider profile not found");
+
+            provider.Availability = availability;
+            db.SaveChanges();
+            return Ok(provider);
+        }
+    }
+}

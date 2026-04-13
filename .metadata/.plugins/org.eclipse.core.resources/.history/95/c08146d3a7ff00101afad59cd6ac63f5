@@ -1,0 +1,265 @@
+package com.lifesamadhan.api.controller;
+
+import com.lifesamadhan.api.dto.*;
+import com.lifesamadhan.api.model.User;
+import com.lifesamadhan.api.model.ProviderSkill;
+import com.lifesamadhan.api.model.ProviderLocation;
+import com.lifesamadhan.api.model.ServiceCategory;
+import com.lifesamadhan.api.model.Service;
+import com.lifesamadhan.api.model.Location;
+import com.lifesamadhan.api.service.AdminService;
+import com.lifesamadhan.api.service.UserService;
+import com.lifesamadhan.api.service.ServiceCategoryService;
+import com.lifesamadhan.api.service.ServiceService;
+import com.lifesamadhan.api.service.LocationService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/admin")
+@RequiredArgsConstructor
+// @PreAuthorize("hasRole('ADMIN')")
+public class AdminController {
+
+    private final AdminService adminService;
+    private final UserService userService;
+    private final ServiceCategoryService serviceCategoryService;
+    private final ServiceService serviceService;
+    private final LocationService locationService;
+    private final DTOMapper dtoMapper;
+
+    @GetMapping("/test")
+    public ResponseEntity<?> test() {
+        return ResponseEntity.ok(Map.of("message", "Admin controller is working"));
+    }
+
+    @GetMapping("/test-simple")
+    public ResponseEntity<?> testSimple() {
+        return ResponseEntity.ok("Simple test works");
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<UserResponseDTO>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        List<UserResponseDTO> userDTOs = users.stream()
+                .map(dtoMapper::toUserResponseDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(userDTOs);
+    }
+
+    @PutMapping("/skill/{id}/approve")
+    public ResponseEntity<SkillResponseDTO> approveSkill(@PathVariable Long id) {
+        return adminService.approveSkill(id)
+                .map(skill -> ResponseEntity.ok(dtoMapper.toSkillResponseDTO(skill)))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/location/{id}/approve")
+    public ResponseEntity<ProviderLocationResponseDTO> approveLocation(@PathVariable Long id) {
+        return adminService.approveLocation(id)
+                .map(location -> ResponseEntity.ok(dtoMapper.toProviderLocationResponseDTO(location)))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/skills")
+    public ResponseEntity<List<SkillResponseDTO>> getSkillsByStatus(
+            @RequestParam(defaultValue = "PENDING") String status) {
+        List<ProviderSkill> skills = adminService.getSkillsByStatus(status);
+        List<SkillResponseDTO> skillDTOs = skills.stream()
+                .map(dtoMapper::toSkillResponseDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(skillDTOs);
+    }
+
+    @GetMapping("/locations")
+    public ResponseEntity<List<ProviderLocationResponseDTO>> getLocationsByStatus(
+            @RequestParam(defaultValue = "PENDING") String status) {
+        List<ProviderLocation> locations = adminService.getLocationsByStatus(status);
+        List<ProviderLocationResponseDTO> locationDTOs = locations.stream()
+                .map(dtoMapper::toProviderLocationResponseDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(locationDTOs);
+    }
+
+    @GetMapping("/providers")
+    public ResponseEntity<List<ServiceProvider>> getAllProviders() {
+        return ResponseEntity.ok(adminService.getAllProviders());
+    }
+
+    @GetMapping("/skills/pending")
+    public ResponseEntity<List<SkillResponseDTO>> getPendingSkills() {
+        List<ProviderSkill> skills = adminService.getSkillsByStatus("PENDING");
+        List<SkillResponseDTO> skillDTOs = skills.stream()
+                .map(dtoMapper::toSkillResponseDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(skillDTOs);
+    }
+
+    // Service Category Management
+    @PostMapping("/categories")
+    public ResponseEntity<CategoryResponseDTO> createServiceCategory(
+            @Valid @RequestBody CreateCategoryDTO categoryDTO) {
+        ServiceCategory category = dtoMapper.toServiceCategory(categoryDTO);
+        ServiceCategory savedCategory = serviceCategoryService.createCategory(category);
+        return ResponseEntity.ok(dtoMapper.toCategoryResponseDTO(savedCategory));
+    }
+
+    @PostMapping("/service-categories")
+    public ResponseEntity<CategoryResponseDTO> createServiceCategoryAlt(
+            @Valid @RequestBody CreateCategoryDTO categoryDTO) {
+        return createServiceCategory(categoryDTO);
+    }
+
+    @GetMapping("/categories")
+    public ResponseEntity<List<CategoryResponseDTO>> getAllServiceCategories() {
+        try {
+            List<ServiceCategory> categories = serviceCategoryService.getAllCategories();
+            List<CategoryResponseDTO> categoryDTOs = categories.stream()
+                    .map(dtoMapper::toCategoryResponseDTO)
+                    .collect(Collectors.toList());
+            System.out.println("Found " + categoryDTOs.size() + " categories");
+            return ResponseEntity.ok(categoryDTOs);
+        } catch (Exception e) {
+            System.err.println("Error getting categories: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.ok(new ArrayList<>());
+        }
+    }
+
+    @GetMapping("/service-categories")
+    public ResponseEntity<List<CategoryResponseDTO>> getAllServiceCategoriesAlt() {
+        return getAllServiceCategories();
+    }
+
+    @PutMapping("/categories/{id}")
+    public ResponseEntity<CategoryResponseDTO> updateServiceCategory(@PathVariable Long id,
+            @Valid @RequestBody UpdateCategoryDTO categoryDTO) {
+        if (!serviceCategoryService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        ServiceCategory category = serviceCategoryService.getCategoryById(id).orElse(null);
+        if (category == null) {
+            return ResponseEntity.notFound().build();
+        }
+        dtoMapper.updateServiceCategory(category, categoryDTO);
+        ServiceCategory updatedCategory = serviceCategoryService.updateCategory(id, category);
+        return ResponseEntity.ok(dtoMapper.toCategoryResponseDTO(updatedCategory));
+    }
+
+    @PutMapping("/service-categories/{id}")
+    public ResponseEntity<CategoryResponseDTO> updateServiceCategoryAlt(@PathVariable Long id,
+            @Valid @RequestBody UpdateCategoryDTO categoryDTO) {
+        return updateServiceCategory(id, categoryDTO);
+    }
+
+    @DeleteMapping("/categories/{id}")
+    public ResponseEntity<Void> deleteServiceCategory(@PathVariable Long id) {
+        if (serviceCategoryService.existsById(id)) {
+            serviceCategoryService.deleteCategory(id);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/service-categories/{id}")
+    public ResponseEntity<Void> deleteServiceCategoryAlt(@PathVariable Long id) {
+        return deleteServiceCategory(id);
+    }
+
+    // Service Management
+    @PostMapping("/services")
+    public ResponseEntity<ServiceResponseDTO> createService(@Valid @RequestBody CreateServiceDTO serviceDTO) {
+        Service service = dtoMapper.toService(serviceDTO);
+        Service savedService = serviceService.createService(service);
+        return ResponseEntity.ok(dtoMapper.toServiceResponseDTO(savedService));
+    }
+
+    @GetMapping("/services")
+    public ResponseEntity<List<ServiceResponseDTO>> getAllServices() {
+        try {
+            List<Service> services = serviceService.getAllServices();
+            List<ServiceResponseDTO> serviceDTOs = services.stream()
+                    .map(dtoMapper::toServiceResponseDTO)
+                    .collect(Collectors.toList());
+            System.out.println("Found " + serviceDTOs.size() + " services");
+            return ResponseEntity.ok(serviceDTOs);
+        } catch (Exception e) {
+            System.err.println("Error getting services: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.ok(new ArrayList<>());
+        }
+    }
+
+    @PutMapping("/services/{id}")
+    public ResponseEntity<ServiceResponseDTO> updateService(@PathVariable Long id,
+            @Valid @RequestBody UpdateServiceDTO serviceDTO) {
+        if (!serviceService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        Service service = serviceService.getServiceById(id).orElse(null);
+        if (service == null) {
+            return ResponseEntity.notFound().build();
+        }
+        dtoMapper.updateService(service, serviceDTO);
+        Service updatedService = serviceService.updateService(id, service);
+        return ResponseEntity.ok(dtoMapper.toServiceResponseDTO(updatedService));
+    }
+
+    @DeleteMapping("/services/{id}")
+    public ResponseEntity<Void> deleteService(@PathVariable Long id) {
+        if (serviceService.existsById(id)) {
+            serviceService.deleteService(id);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    // Location Management
+    @PostMapping("/locations")
+    public ResponseEntity<LocationResponseDTO> createLocation(@Valid @RequestBody CreateLocationDTO locationDTO) {
+        Location location = dtoMapper.toLocation(locationDTO);
+        Location savedLocation = locationService.createLocation(location);
+        return ResponseEntity.ok(dtoMapper.toLocationResponseDTO(savedLocation));
+    }
+
+    @GetMapping("/all-locations")
+    public ResponseEntity<List<LocationResponseDTO>> getAllLocations() {
+        List<Location> locations = locationService.getAllLocationsForAdmin();
+        List<LocationResponseDTO> locationDTOs = locations.stream()
+                .map(dtoMapper::toLocationResponseDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(locationDTOs);
+    }
+
+    @PutMapping("/locations/{id}")
+    public ResponseEntity<LocationResponseDTO> updateLocation(@PathVariable Long id,
+            @Valid @RequestBody UpdateLocationDTO locationDTO) {
+        if (!locationService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        Location location = locationService.getLocationById(id).orElse(null);
+        if (location == null) {
+            return ResponseEntity.notFound().build();
+        }
+        dtoMapper.updateLocation(location, locationDTO);
+        Location updatedLocation = locationService.updateLocation(id, location);
+        return ResponseEntity.ok(dtoMapper.toLocationResponseDTO(updatedLocation));
+    }
+
+    @DeleteMapping("/locations/{id}")
+    public ResponseEntity<Void> deleteLocation(@PathVariable Long id) {
+        if (locationService.existsById(id)) {
+            locationService.deleteLocation(id);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+}

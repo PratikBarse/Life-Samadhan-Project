@@ -1,0 +1,39 @@
+﻿import React from 'react';
+import MyRequests from './MyRequests';
+import MyAssignments from './MyAssignments';
+import MyPayments from './MyPayments';
+import MyRatings from './MyRatings';
+import Profile from './Profile';
+
+export default function Dashboard({ token }){
+  return (
+    <div style={{ padding: 12 }}>
+      <h2>Your Dashboard</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 16 }}>
+        <div>
+          <div className="app-card">
+            <MyRequests token={token} />
+          </div>
+
+          <div className="app-card" style={{ marginTop: 12 }}>
+            <MyAssignments token={token} />
+          </div>
+
+          <div className="app-card" style={{ marginTop: 12 }}>
+            <MyPayments token={token} />
+          </div>
+
+          <div className="app-card" style={{ marginTop: 12 }}>
+            <MyRatings token={token} />
+          </div>
+        </div>
+
+        <div>
+          <div className="app-card">
+            <Profile token={token} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

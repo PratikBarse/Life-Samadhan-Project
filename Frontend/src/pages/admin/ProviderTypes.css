@@ -1,0 +1,22 @@
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.text-success {
+  color: var(--success-color);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    width: 100%;
+    margin-top: var(--spacing-md);
+  }
+  
+  .filter-buttons button {
+    flex: 1;
+  }
+}

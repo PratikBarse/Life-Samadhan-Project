@@ -1,0 +1,113 @@
+﻿import React, { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5055/api';
+
+const EXAMPLE_SERVICES = [
+  { id: 101, name: 'Plumbing', description: 'Fix leaks, install faucets and repair pipelines.' },
+  { id: 102, name: 'Electrical', description: 'Wiring, light installation, switches and safety checks.' },
+  { id: 103, name: 'Carpentry', description: 'Furniture repair, custom woodwork, doors and cabinets.' },
+  { id: 104, name: 'Cleaning', description: 'Home deep cleaning, sofa wash and pest control services.' }
+];
+
+export default function Landing({ onNavigate, token }) {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch(`${API_BASE}/service`);
+        const data = await res.json();
+        setServices(data);
+      } catch (err) {
+        console.error(err);
+        setServices(EXAMPLE_SERVICES);
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  const filtered = (services || []).filter(s => s.name.toLowerCase().includes(query.toLowerCase()));
+
+  const handleBook = (serviceId) => {
+    if (!token) { onNavigate('login'); return; }
+    onNavigate('/dashboard');
+  };
+
+  return (
+    <div>
+      <div className="hero app-card">
+        <div className="hero-inner">
+          <div className="hero-left">
+            <h1 className="hero-title">Find trusted local service providers</h1>
+            <p className="hero-sub">Reliable professionals for home repairs, cleaning, and daily tasks — booked quickly, paid securely.</p>
+
+            <div className="search-bar">
+              <input className="search-input" placeholder="Search services, e.g. plumber, carpenter" value={query} onChange={e => setQuery(e.target.value)} />
+              <button className="search-btn" onClick={() => {}}>Search</button>
+            </div>
+
+            <div style={{ marginTop: 18 }}>
+              <button onClick={() => onNavigate('register')}>Create account</button>
+              <button onClick={() => onNavigate('login')} style={{ marginLeft: 10, background: 'transparent', color: '#0b5cff', border: '1px solid #0b5cff' }}>Sign in</button>
+            </div>
+          </div>
+
+          <div style={{ width: 360 }}>
+            <img src="/logo.svg" alt="hero" style={{ width: '100%', borderRadius: 12 }} />
+          </div>
+        </div>
+      </div>
+
+      <main style={{ marginTop: 18 }}>
+        <section>
+          <h2 style={{ marginBottom: 12 }}>Popular services</h2>
+
+          {loading ? <div>Loading services...</div> : (
+            <div className="services-grid">
+              {(filtered.length === 0 ? EXAMPLE_SERVICES : filtered).map(s => (
+                <article key={s.id} className="service-card">
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                    <div className="service-icon">{s.name.charAt(0)}</div>
+                    <div style={{ flex: 1 }}>
+                      <div className="service-title">{s.name}</div>
+                      <div className="service-desc">{s.description || 'Trusted and verified providers'}</div>
+                    </div>
+                  </div>
+
+                  <div className="service-meta">
+                    <div className="badge">Verified</div>
+                    <div>
+                      <button className="service-btn" onClick={() => handleBook(s.id)}>Book</button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <section style={{ marginTop: 28 }}>
+          <h3>How LifeSamadhan works</h3>
+          <div style={{ display: 'flex', gap: 12, marginTop: 12, flexWrap: 'wrap' }}>
+            <div className="service-card" style={{ flex: '1 1 220px' }}>
+              <strong>Browse</strong>
+              <div style={{ color: '#6b7280', marginTop: 8 }}>Search services or browse by category to find what you need.</div>
+            </div>
+            <div className="service-card" style={{ flex: '1 1 220px' }}>
+              <strong>Book</strong>
+              <div style={{ color: '#6b7280', marginTop: 8 }}>Request a service — we assign a verified provider in your area.</div>
+            </div>
+            <div className="service-card" style={{ flex: '1 1 220px' }}>
+              <strong>Pay</strong>
+              <div style={{ color: '#6b7280', marginTop: 8 }}>Pay securely after the service is completed.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
