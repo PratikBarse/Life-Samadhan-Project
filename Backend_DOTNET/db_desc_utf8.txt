@@ -1,9 +1,0 @@
-﻿Field	Type	Null	Key	Default	Extra
-Id	bigint	NO	PRI	NULL	auto_increment
-Name	varchar(100)	NO		NULL	
-Email	longtext	NO		NULL	
-Mobile	longtext	NO		NULL	
-Password	longtext	NO		NULL	
-Role	longtext	NO		NULL	
-Status	longtext	NO		NULL	
-CreatedAt	datetime(6)	NO		NULL	
